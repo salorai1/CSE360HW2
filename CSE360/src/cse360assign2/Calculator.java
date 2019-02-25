@@ -9,13 +9,14 @@ package cse360assign2;
  * 				Calculator class is a simple calculator to add, subtract,
  * 				multiply, divide to a total value. It also has a function to 
  * 				return the total, and one to return the history of all actions.
- * @version 	2 Added the functions' operations except for getHistory
+ * @version 	3 Added the function's getHistory operation
  *
  */
 public class Calculator 
 {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * constructor that initializes the total and the history of the class
@@ -23,6 +24,7 @@ public class Calculator
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history = Integer.toString(total);
 	}
 	
 	
@@ -43,6 +45,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total =  total + value;
+		history = history + " + " + Integer.toString(value);
 	}
 	
 	
@@ -53,6 +56,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total =  total - value;
+		history = history + " - " + Integer.toString(value);
 	}
 	
 	
@@ -63,6 +67,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total =  total * value;
+		history = history + " * " + Integer.toString(value);
 	}
 	
 	
@@ -77,6 +82,8 @@ public class Calculator
 			total = 0;
 		else
 			total = total / value;
+		
+		history = history + " / " + Integer.toString(value);
 	}
 	
 	
@@ -87,6 +94,6 @@ public class Calculator
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 }
