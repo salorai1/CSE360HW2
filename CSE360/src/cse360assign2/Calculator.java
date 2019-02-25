@@ -9,7 +9,7 @@ package cse360assign2;
  * 				Calculator class is a simple calculator to add, subtract,
  * 				multiply, divide to a total value. It also has a function to 
  * 				return the total, and one to return the history of all actions.
- * @version 	1 before making any code changes to the file
+ * @version 	2 Added the functions' operations except for getHistory
  *
  */
 public class Calculator 
@@ -32,7 +32,7 @@ public class Calculator
 	 */
 	public int getTotal () 
 	{
-		return 0;
+		return total;
 	}
 	
 	
@@ -42,7 +42,7 @@ public class Calculator
 	 */
 	public void add (int value) 
 	{
-		
+		total =  total + value;
 	}
 	
 	
@@ -52,7 +52,7 @@ public class Calculator
 	 */
 	public void subtract (int value) 
 	{
-		
+		total =  total - value;
 	}
 	
 	
@@ -62,7 +62,7 @@ public class Calculator
 	 */
 	public void multiply (int value) 
 	{
-		
+		total =  total * value;
 	}
 	
 	
@@ -73,7 +73,10 @@ public class Calculator
 	 */
 	public void divide (int value) 
 	{
-		
+		if (value == 0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	
